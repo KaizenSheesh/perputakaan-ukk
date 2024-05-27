@@ -1,0 +1,36 @@
+created:
+    - app/Http/Controllers/BookController.php
+    - app/Http/Controllers/DetailBookController.php
+    - app/Http/Controllers/LoanController.php
+    - app/Http/Controllers/PeminjamanController.php
+    - app/Http/Controllers/CreatePetugasController.php
+    - database/factories/CategoryFactory.php
+    - database/factories/LoanFactory.php
+    - database/factories/RatingFactory.php
+    - database/factories/BookFactory.php
+    - database/migrations/2024_03_06_011035_create_categories_table.php
+    - database/migrations/2024_03_06_011036_create_loans_table.php
+    - database/migrations/2024_03_06_011037_create_ratings_table.php
+    - database/migrations/2024_03_06_011038_create_books_table.php
+    - app/Models/Category.php
+    - app/Models/Loan.php
+    - app/Models/Rating.php
+    - app/Models/Book.php
+    - tests/Feature/Http/Controllers/BookControllerTest.php
+    - tests/Feature/Http/Controllers/DetailBookControllerTest.php
+    - tests/Feature/Http/Controllers/LoanControllerTest.php
+    - tests/Feature/Http/Controllers/PeminjamanControllerTest.php
+    - tests/Feature/Http/Controllers/CreatePetugasControllerTest.php
+    - resources/views/book/index.blade.php
+    - resources/views/book/detail.blade.php
+    - resources/views/loan/index.blade.php
+    - resources/views/peminjaman/index.blade.php
+    - resources/views/petugas/create.blade.php
+updated:
+    - routes/web.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    Category: { name: string }
+    Loan: { book_id: foreign, user_id: foreign, number_borrowed: int, return_date: dateTime, is_returned: int }
+    Rating: { user_id: foreign, book_id: foreign, rating: string }
+    Book: { bookname: string, author: string, year: int, copies_in_circulation: int }

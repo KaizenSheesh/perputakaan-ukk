@@ -1,0 +1,34 @@
+models:
+  Category:
+    name: string
+  Loan:
+    book_id: foreign
+    user_id: foreign
+    number_borrowed: int
+    return_date: dateTime
+    is_returned: int
+  Rating:
+    user_id: foreign
+    book_id: foreign
+    rating: string
+  Book:
+    bookname: string
+    author: string
+    year: int
+    copies_in_circulation: int
+controllers:
+  Book:
+    index:
+      render: book.index
+  DetailBook:
+    index:
+      render: book.detail
+  Loan:
+    index:
+      render: loan.index
+  Peminjaman:
+    index:
+      render: peminjaman.index
+  CreatePetugas:
+    index:
+      render: petugas.create
